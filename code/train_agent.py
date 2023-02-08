@@ -58,7 +58,7 @@ def train_and_plot(
     return eval_scores
 
 
-if __name__ == "__main__":
+def main():
     parser = argparse.ArgumentParser(add_help=True)
     params_dict = {
         "LR": 3e-4,
@@ -75,9 +75,7 @@ if __name__ == "__main__":
     }
 
     parser.add_argument("-lr", action="store", dest="lr", type=float)
-    parser.add_argument(
-        "-buffer_size", action="store", dest="buffer_size", type=int
-    )
+    parser.add_argument("-buffer_size", action="store", dest="buffer_size", type=int)
     parser
     parser.add_argument("-max_steps", action="store", dest="max_steps", type=int)
     parser.add_argument("-eps_init", action="store", dest="eps_init", type=float)
@@ -97,9 +95,7 @@ if __name__ == "__main__":
     parser.add_argument(
         "-soft_update", action="store", dest="soft_update", type=bool, default=True
     )
-    parser.add_argument(
-        "-video", action="store", dest="video", type=bool, default=True
-    )
+    parser.add_argument("-video", action="store", dest="video", type=bool, default=True)
 
     args = parser.parse_args()
     params_dict["LR"] = args.lr
@@ -121,3 +117,7 @@ if __name__ == "__main__":
     )
     agent.save_model_checkpoint(fname=args.fname)
     agent.make_video(args.fname)
+
+
+if __name__ == "__main__":
+    main()
