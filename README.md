@@ -6,7 +6,7 @@ The goal of Q-learning is to approximate the Q-function, Q(s, a), using a deep n
 
 Some different ideas tried in this project include varying how often the target network was updated, changing the size of the replay buffer, as well as tuning hyperparameters such as the learning rate. Each episode was allowed to run for 1000 time steps before terminating (even if the environment itself did not sent a termination flag), and each agent was trained over 1000 episodes or until it achieved > 200 score in the past 100 episodes.
 
-The best agent trained in this exercise (\output\50k_buffer2023_02_08-02_55_36_AM.pth) used a 50k replay buffer, using soft updates every iteration with $\tau$ = 0.01, and a learning rate of 3e-4. It was achieved score > 200 in 90% of evaluation episodes.
+The best agent trained in this exercise (\output\50k_buffer2023_02_08-02_55_36_AM.pth) used a 50k replay buffer, soft updates every iteration with $\tau$ = 0.01, and a learning rate of 3e-4. It achieved score > 200 in 90% of evaluation episodes.
 
 ![training](50kbuffer_training.png)
 
